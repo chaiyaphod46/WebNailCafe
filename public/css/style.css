@@ -1,0 +1,182 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+*{
+  font-family: "Itim", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+main {
+  min-height: 60vh; /* ให้พื้นที่ส่วนกลางของหน้าเว็บคงที่ */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-link {
+    color: rgb(0, 0, 0)!important;
+  }
+
+.reservation-card {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(248, 216, 203); /* สีพื้นหลัง */
+}
+.nav-link.active1 {
+  border-bottom: 2px solid #000;
+}
+
+.reservation-card p {
+    color: #212529; /* สีตัวอักษร */
+}
+
+.liked {
+  fill: red;
+}
+
+
+.fc-scroller {
+  overflow: hidden !important;
+}
+.fc-time-grid-container {
+  height: auto !important;
+}
+/* .fc-time-grid {
+  min-height: calc(100vh - 350px) !important;
+} */
+
+.fc-time-grid .fc-slats td {
+    height: 35px; /* ปรับตัวเลขนี้ให้เหมาะกับความสูงของช่องที่ต้องการ */
+}
+
+.fc-time-grid-event, .fc-time-grid-event > .fc-content {
+    white-space: normal;
+}
+
+/* navbar เลือกกรองรายการ */
+.custom-nav {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  padding-bottom: 5px;
+}
+
+.custom-nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: brown;
+  transition: width 0.3s ease-in-out;
+}
+
+.custom-nav:hover::after {
+  width: 100%;
+}
+
+.custom-nav.active::after {
+  width: 100%;
+  background-color: brown;
+}
+
+
+
+/* popup เลือกลายเล็บ */
+
+.nail-design-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.nail-design {
+  width: 100%;
+  height: 200px; /* เพิ่มความสูงให้ใหญ่ขึ้น */
+  object-fit: cover; /* ครอบคลุมทั้งพื้นที่โดยไม่ผิดสัดส่วน */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.nail-design:hover {
+  transform: scale(1.05); /* ขยายเล็กน้อยเมื่อ hover */
+
+}
+
+.nail-design.selected {
+  border: 3px solid #202320; /* ขอบเมื่อเลือก */
+  transform: scale(1.08);
+}
+
+.virtual-try-on {
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.85rem;
+  padding: 5px 8px;
+}
+
+/* ส่วนของ popup บริการเสริม */
+.list-group-item {
+  cursor: pointer;
+  border: 2px solid #ccc; /* กรอบสีเทาเริ่มต้น */
+  border-radius: 8px; /* ทำให้มุมโค้ง */
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  padding: 10px;
+}
+
+.list-group-item:has(input:checked) {
+  border-color: #dfab90; /* เปลี่ยนสีกรอบเมื่อถูกเลือก */
+  background-color: rgba(255, 152, 0, 0.1); /* เปลี่ยนพื้นหลังให้มีสีอ่อน */
+}
+
+
+
+/* ส่วนของหน้า showpromotion */
+.card-hover:hover {
+  transform: scale(1.05); /* ขยายขนาดการ์ดเล็กน้อย */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* เพิ่มเงาให้การ์ด */
+  cursor: pointer; /* เปลี่ยนเป็น pointer เพื่อแสดงว่ากดได้ */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มการเปลี่ยนแปลงอย่างนุ่มนวล */
+}
+
+/* ยกเลิกการจอง */
+.cancel-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #f44336; /* สีแดง */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+
+/* ปุ่ม virtual-try-on เลือกลายเล็บ*/
+.virtual-try-on {
+  bottom: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.3); /* สีขาวโปร่งใส 60% */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  color: #5d5c5c; /* สีเทาเข้มนิดๆ ดูพรีเมี่ยม */
+  font-weight: bold;
+  padding: 5px 15px;
+  backdrop-filter: blur(10px); /* ทำให้พื้นหลังเบลอนิดๆ */
+  transition: all 0.3s ease;
+}
+
+.virtual-try-on:hover {
+  background: rgba(255, 255, 255, 0.9); /* โปร่งใสน้อยลงเวลาชี้ */
+  color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* ใส่เงาให้ดูพรีเมี่ยม */
+  transform: scale(1.05); /* ขยายเล็กน้อย */
+}
+
+
+
+

@@ -1,0 +1,91 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+*{
+  font-family: "Itim", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.nav-link.active {
+    background-color: #ffcdac !important;
+}
+.nailname-cell {
+    white-space: normal; 
+    word-wrap: break-word; 
+    max-width: 200px; 
+}
+.custom-navbar {
+    background-color: rgb(252, 229, 220);
+}
+
+.close-button {
+    position: absolute;
+    top: 5px; /* ปรับจาก 0 ให้เลื่อนไปนิดหน่อยจากขอบบน */
+    right: 5px; /* ปรับไปที่มุมขวา */
+    background-color: rgb(207, 207, 207);
+    color: rgb(1, 1, 1);
+    border: none;
+    border-radius: 50%;
+    width: 14px; /* ขนาดที่ใหญ่ขึ้นเล็กน้อย */
+    height: 14px; /* ขนาดที่ใหญ่ขึ้นเล็กน้อย */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    transform: translate(50%, -50%); /* ปรับตำแหน่งให้ตรงมุม */
+}
+
+/* ส่วน ดอปดาวเลือกลายเล็บในโปรโมชั่น */
+#nailDesignList {
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* จัดเรียงจากซ้ายไปขวา */
+    gap: 10px; /* ช่องว่างระหว่างรายการ */
+}
+
+.dropdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px; /* ขนาดของแต่ละรายการ */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.nail-design-image {
+    width: 100px; /* ขยายขนาดรูปภาพ */
+    height: 100px; /* ให้รูปมีขนาดที่เหมาะสม */
+    object-fit: cover;
+    border-radius: 8px; /* เพิ่มมุมมนให้รูปภาพ */
+}
+
+.nail-design-name {
+    font-size: 11px;
+    margin-top: 5px;
+    color: #333;
+}
+/* -------------------------------*/
+
+
+/* หน้า popup เเสดงข้อมูลการจองของลูกค้า */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.reservation-detail {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.reservation-detail p {
+    margin: 5px 0;
+}
+.image-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 30%;
+}
+
